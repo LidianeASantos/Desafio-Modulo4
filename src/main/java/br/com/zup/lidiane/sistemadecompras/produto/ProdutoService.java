@@ -17,4 +17,12 @@ public class ProdutoService {
     public List<Produto> retornarProdutoNaLista(){
         return this.produtos;
     }
+
+    public void verificarProdutoDuplicado(String nome){
+        for (Produto retorno : produtos){
+            if (retorno.getNome().equals( nome )){
+                throw new RuntimeException("Produto já cadastrado!");
+            }
+        }
+    }
 }
