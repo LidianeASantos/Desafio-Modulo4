@@ -12,7 +12,7 @@ public class Produto {
     @Min( value = 1, message = "{validacao.preco}")
     private double preco;
 
-    @NotBlank(message = "{validacao.quantidade}")
+    @Min( value = 1, message = "{validacao.quantidade}")
     private int quantidade;
 
     public Produto() {
