@@ -6,14 +6,13 @@ import javax.validation.constraints.Size;
 
 public class Produto {
 
-    @NotBlank
+    @NotBlank(message = "{validacao.nome.produto}")
     private String nome;
 
-    @Min( 1 )
+    @Min( value = 1, message = "{validacao.preco}")
     private double preco;
 
-    @NotBlank
-    @Size(min = 1)
+    @NotBlank(message = "{validacao.quantidade}")
     private int quantidade;
 
     public Produto() {

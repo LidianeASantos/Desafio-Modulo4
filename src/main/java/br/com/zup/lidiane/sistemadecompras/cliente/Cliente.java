@@ -6,13 +6,13 @@ import javax.validation.constraints.NotBlank;
 
 public class Cliente {
 
-    @NotBlank
+    @NotBlank(message = "{validacao.nome}")
     private String nome;
 
-    @CPF
+    @CPF(message = "{validacao.cpf}")
     private String cpf;
 
-    @Email
+    @Email(message = "{validacao.email}")
     private String email;
 
 
