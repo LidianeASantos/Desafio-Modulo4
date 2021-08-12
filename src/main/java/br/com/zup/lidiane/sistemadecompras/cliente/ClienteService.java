@@ -1,5 +1,6 @@
 package br.com.zup.lidiane.sistemadecompras.cliente;
 
+import br.com.zup.lidiane.sistemadecompras.produto.Produto;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -12,5 +13,15 @@ public class ClienteService {
 
     public void adicionarClienteNaLista(Cliente cliente){
         clientes.add( cliente );
+    }
+
+    public Cliente pesquisarClientePorCPF(String cpf){
+        Cliente cliente = null;
+        for (Cliente retorno : clientes){
+            if (retorno.getCpf().equals( cpf )) {
+                cliente = retorno;
+            }
+
+        }   throw new RuntimeException("Cliente não encontrado!");
     }
 }
