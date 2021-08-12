@@ -13,4 +13,6 @@ public class CompraService {
     public void adicionarCompraNaLista(Compra compra){
         compras.add( compra );
     }
+
+
 }

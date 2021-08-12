@@ -20,7 +20,6 @@ public class ClienteController {
     }
 
 
-
     @GetMapping("/{cpf}")
     public Cliente pesquisarClientePorCPF(@PathVariable String cpf){
         return clienteService.pesquisarClientePorCPF( cpf );
