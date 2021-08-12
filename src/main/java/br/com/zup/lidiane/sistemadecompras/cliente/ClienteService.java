@@ -19,7 +19,7 @@ public class ClienteService {
         Cliente cliente = null;
         for (Cliente retorno : clientes){
             if (retorno.getCpf().equals( cpf )) {
-                cliente = retorno;
+                return retorno;
             }
 
         }   throw new RuntimeException("Cliente não encontrado!");
