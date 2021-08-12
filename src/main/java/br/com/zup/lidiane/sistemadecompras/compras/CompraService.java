@@ -9,4 +9,8 @@ import java.util.List;
 public class CompraService {
 
     private List<Compra> compras = new ArrayList<>();
+
+    public void adicionarCompraNaLista(Compra compra){
+        compras.add( compra );
+    }
 }
