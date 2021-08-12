@@ -13,6 +13,7 @@ public class ClienteService {
 
     public void adicionarClienteNaLista(Cliente cliente){
         verificarEmailDuplicado( cliente.getEmail() );
+        verificarCPFDuplicado( cliente.getCpf() );
         clientes.add( cliente );
     }
 
@@ -29,8 +30,17 @@ public class ClienteService {
     public void verificarEmailDuplicado(String email){
         for (Cliente retorno : clientes){
             if (retorno.getEmail().equals( email )){
+                throw new RuntimeException("Cliente com email já cadastrado!");
+            }
+        }
+    }
+
+    public void verificarCPFDuplicado(String cpf){
+        for (Cliente retorno : clientes){
+            if (retorno.getCpf().equals( cpf )){
                 throw new RuntimeException("Cliente com CPF já cadastrado!");
             }
         }
     }
+
 }
