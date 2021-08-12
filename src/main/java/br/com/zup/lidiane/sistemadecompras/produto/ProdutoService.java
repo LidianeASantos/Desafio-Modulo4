@@ -14,5 +14,7 @@ public class ProdutoService {
         produtos.add( produto );
     }
 
-    
+    public List<Produto> retornarProdutoNaLista(){
+        return this.produtos;
+    }
 }
