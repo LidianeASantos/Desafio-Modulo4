@@ -1,4 +1,4 @@
-package br.com.zup.lidiane.sistemadecompras.compras;
+package br.com.zup.lidiane.sistemadecompras.compra;
 
 import org.springframework.stereotype.Service;
 

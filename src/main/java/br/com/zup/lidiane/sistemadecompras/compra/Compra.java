@@ -1,4 +1,4 @@
-package br.com.zup.lidiane.sistemadecompras.compras;
+package br.com.zup.lidiane.sistemadecompras.compra;
 
 import br.com.zup.lidiane.sistemadecompras.cliente.Cliente;
 import br.com.zup.lidiane.sistemadecompras.produto.Produto;
