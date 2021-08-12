@@ -14,5 +14,7 @@ public class CompraService {
         compras.add( compra );
     }
 
-
+    public List<Compra> retornarListaDeCompra(){
+        return this.compras;
+    }
 }
