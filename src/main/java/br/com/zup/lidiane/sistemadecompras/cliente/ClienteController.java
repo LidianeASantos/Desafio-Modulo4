@@ -18,4 +18,11 @@ public class ClienteController {
     public void cadastrarCliente(@RequestBody @Valid Cliente cliente){
         clienteService.adicionarClienteNaLista( cliente );
     }
+
+
+
+    @GetMapping("/{cpf}")
+    public Cliente pesquisarClientePorCPF(@PathVariable String cpf){
+        return clienteService.pesquisarClientePorCPF( cpf );
+    }
 }
