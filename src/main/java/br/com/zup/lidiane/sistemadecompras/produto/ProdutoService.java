@@ -11,6 +11,7 @@ public class ProdutoService {
     private List<Produto> produtos = new ArrayList<>();
 
     public void adicionarProdutoNaLista(Produto produto){
+        verificarProdutoDuplicado( produto.getNome() );
         produtos.add( produto );
     }
 
