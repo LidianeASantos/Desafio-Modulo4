@@ -1,5 +1,6 @@
 package br.com.zup.lidiane.sistemadecompras.produto;
 
+import br.com.zup.lidiane.sistemadecompras.configuracao.ProdutoJaCadastradoException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class ProdutoService {
     public void verificarProdutoDuplicado(String nome){
         for (Produto retorno : produtos){
             if (retorno.getNome().equals( nome )){
-                throw new RuntimeException("Produto já cadastrado!");
+                throw new ProdutoJaCadastradoException("Produto já cadastrado!");
             }
         }
     }

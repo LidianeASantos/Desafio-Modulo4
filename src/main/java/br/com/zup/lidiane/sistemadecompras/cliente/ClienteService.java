@@ -1,5 +1,7 @@
 package br.com.zup.lidiane.sistemadecompras.cliente;
 
+import br.com.zup.lidiane.sistemadecompras.configuracao.ClienteComEmailJaCadastrdoException;
+import br.com.zup.lidiane.sistemadecompras.exceptions.ClienteComCPFJaCadastradoException;
 import br.com.zup.lidiane.sistemadecompras.produto.Produto;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +32,7 @@ public class ClienteService {
     public void verificarEmailDuplicado(String email){
         for (Cliente retorno : clientes){
             if (retorno.getEmail().equals( email )){
-                throw new RuntimeException("Cliente com email já cadastrado!");
+                throw new ClienteComEmailJaCadastrdoException("Cliente com email já cadastrado!");
             }
         }
     }
@@ -38,7 +40,7 @@ public class ClienteService {
     public void verificarCPFDuplicado(String cpf){
         for (Cliente retorno : clientes){
             if (retorno.getCpf().equals( cpf )){
-                throw new RuntimeException("Cliente com CPF já cadastrado!");
+                throw new ClienteComCPFJaCadastradoException("Cliente com CPF já cadastrado!");
             }
         }
     }
