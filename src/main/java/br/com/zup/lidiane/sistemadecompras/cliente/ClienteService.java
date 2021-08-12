@@ -12,6 +12,7 @@ public class ClienteService {
     private List<Cliente> clientes = new ArrayList<>();
 
     public void adicionarClienteNaLista(Cliente cliente){
+        verificarEmailDuplicado( cliente.getEmail() );
         clientes.add( cliente );
     }
 
@@ -23,5 +24,13 @@ public class ClienteService {
             }
 
         }   throw new RuntimeException("Cliente não encontrado!");
+    }
+
+    public void verificarEmailDuplicado(String email){
+        for (Cliente retorno : clientes){
+            if (retorno.getEmail().equals( email )){
+                throw new RuntimeException("Cliente com CPF já cadastrado!");
+            }
+        }
     }
 }
