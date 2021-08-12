@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/compras")
@@ -17,6 +18,11 @@ public class CompraController {
     @ResponseStatus(HttpStatus.CREATED)
     public void cadastrarCompra(@RequestBody @Valid Compra compra) {
         compraService.adicionarCompraNaLista( compra );
+    }
+
+    @GetMapping
+    public List<Compra> visualizarCompra(){
+        return compraService.retornarListaDeCompra();
     }
 
 }
