@@ -1,8 +1,6 @@
 package br.com.zup.lidiane.sistemadecompras.compra;
 
-import br.com.zup.lidiane.sistemadecompras.cliente.Cliente;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +13,7 @@ public class CompraService {
         compras.add( compra );
     }
 
+
     public List<Compra> retornarListaDeCompra(){
         return this.compras;
     }
@@ -24,6 +23,8 @@ public class CompraService {
        retornarListaDeCompraPorCliente(cpf);
        return compras;
     }
+
+
 
 
 }

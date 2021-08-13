@@ -2,7 +2,6 @@ package br.com.zup.lidiane.sistemadecompras.cliente;
 
 import br.com.zup.lidiane.sistemadecompras.configuracao.ClienteComEmailJaCadastrdoException;
 import br.com.zup.lidiane.sistemadecompras.exceptions.ClienteComCPFJaCadastradoException;
-import br.com.zup.lidiane.sistemadecompras.produto.Produto;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

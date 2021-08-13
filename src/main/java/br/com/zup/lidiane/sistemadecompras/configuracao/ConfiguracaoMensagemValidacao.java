@@ -12,15 +12,18 @@ public class ConfiguracaoMensagemValidacao {
     @Bean
     public MessageSource messageSource(){
         ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-        messageSource.setBasename( "classpath:MensagensDeValidacao" );
+        messageSource.setBasename( "classpath:MensagemDeValidacao" );
         messageSource.setDefaultEncoding( "UTF-8" );
         return messageSource;
     }
 
-    public LocalValidatorFactoryBean validator(){
+    @Bean
+    public LocalValidatorFactoryBean validator(MessageSource messageSource){
         LocalValidatorFactoryBean bean = new LocalValidatorFactoryBean();
         bean.setValidationMessageSource( messageSource() );
         return bean;
     }
+
+
 
 }

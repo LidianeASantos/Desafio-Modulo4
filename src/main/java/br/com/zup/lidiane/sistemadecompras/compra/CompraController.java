@@ -16,9 +16,11 @@ public class CompraController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void cadastrarCompra(@RequestBody @Valid Compra compra) {
+    public Compra cadastrarCompra(@RequestBody @Valid Compra compra) {
         compraService.adicionarCompraNaLista( compra );
+        return compra;
     }
+
 
     @GetMapping
     public List<Compra> visualizarCompra(){
