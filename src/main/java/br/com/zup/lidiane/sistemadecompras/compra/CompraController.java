@@ -25,4 +25,9 @@ public class CompraController {
         return compraService.retornarListaDeCompra();
     }
 
+    @GetMapping("/{cpf}")
+    public List<Compra> mostrarCompraPorCliente(@PathVariable String cpf){
+        return compraService.retornarListaDeCompraPorCliente( cpf );
+    }
+
 }
