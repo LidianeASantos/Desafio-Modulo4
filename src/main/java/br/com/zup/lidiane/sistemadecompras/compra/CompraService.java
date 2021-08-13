@@ -19,5 +19,11 @@ public class CompraService {
         return this.compras;
     }
 
+    public List<Compra> retornarListaDeCompraPorCliente(Cliente cpf){
+       retornarListaDeCompra();
+       retornarListaDeCompraPorCliente(cpf);
+       return compras;
+    }
 
+   
 }
