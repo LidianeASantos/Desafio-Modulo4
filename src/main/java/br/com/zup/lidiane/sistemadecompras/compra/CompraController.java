@@ -1,5 +1,6 @@
 package br.com.zup.lidiane.sistemadecompras.compra;
 
+import br.com.zup.lidiane.sistemadecompras.produto.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -14,10 +15,13 @@ public class CompraController {
     @Autowired
     private CompraService compraService;
 
+    @Autowired
+    private ProdutoService produtoService;
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Compra cadastrarCompra(@RequestBody @Valid Compra compra) {
-        compraService.adicionarCompraNaLista( compra );
+        compraService.adicionaCompraNaLista( compra );
         return compra;
     }
 

@@ -1,6 +1,7 @@
 package br.com.zup.lidiane.sistemadecompras.produto;
 
 import br.com.zup.lidiane.sistemadecompras.configuracao.ProdutoJaCadastradoException;
+import br.com.zup.lidiane.sistemadecompras.configuracao.ProdutoNaoEncontradoException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -20,6 +21,15 @@ public class ProdutoService {
         return this.produtos;
     }
 
+    public Produto buscarProduto(String nome){
+        Produto produto = null;
+        for (Produto retorno : produtos){
+            if (retorno.getNome().equals( nome )){
+                return retorno;
+            }
+        } throw new ProdutoNaoEncontradoException("Produto não encontrado!");
+    }
+
     public void verificarProdutoDuplicado(String nome){
         for (Produto retorno : produtos){
             if (retorno.getNome().equals( nome )){
@@ -27,4 +37,8 @@ public class ProdutoService {
             }
         }
     }
+
+
+
+
 }

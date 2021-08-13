@@ -5,7 +5,7 @@ import br.com.zup.lidiane.sistemadecompras.produto.Produto;
 
 import java.util.List;
 
-public class Compra {
+    public class Compra {
 
     private Cliente cliente;
 
