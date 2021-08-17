@@ -15,7 +15,7 @@ public class ClienteController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void cadastrarCliente(@RequestBody @Valid Cliente cliente){
+    public void cadastrarCliente(@RequestBody @Valid Cliente cliente){ //TODO: verificar erro 500
         clienteService.adicionarClienteNaLista( cliente );
     }
 

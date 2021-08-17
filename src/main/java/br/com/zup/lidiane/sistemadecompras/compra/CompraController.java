@@ -1,5 +1,6 @@
 package br.com.zup.lidiane.sistemadecompras.compra;
 
+import br.com.zup.lidiane.sistemadecompras.produto.Produto;
 import br.com.zup.lidiane.sistemadecompras.produto.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,11 +26,6 @@ public class CompraController {
         return compra;
     }
 
-
-    @GetMapping
-    public List<Compra> visualizarCompra(){
-        return compraService.retornarListaDeCompra();
-    }
 
     @GetMapping("/{cpf}")
     public List<Compra> mostrarCompraPorCliente(@PathVariable String cpf){
