@@ -25,6 +25,19 @@ public class ControllerAdvice {
         return new MensagemDeErro( 400, erros );
     }
 
+    @ExceptionHandler(ProdutosForaDeEstoqueException.class)
+    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+    public MensagemDeErro manipularProdutosForaDeEstoqueExcption(ProdutosForaDeEstoqueException exception){
+        StringBuilder mensagem = new StringBuilder();
+        mensagem.append("Os produtos a seguir estão em falta no momento: ");
+
+        for (String nomeDoProduto : exception.nomeDosProdutos){
+            mensagem.append(nomeDoProduto+" ");
+        }
+
+        return new MensagemDeErro(mensagem.toString());
+    }
+
     @ExceptionHandler(ClienteComCPFJaCadastradoException.class)
     public MensagemDeErro manipularClienteComCPFJaCadastrado(ClienteComCPFJaCadastradoException exception){
         List<Erro> erros = Arrays.asList( new Erro( exception.getLocalizedMessage() ) );

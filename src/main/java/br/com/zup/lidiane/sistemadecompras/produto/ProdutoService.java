@@ -21,8 +21,7 @@ public class ProdutoService {
         return this.produtos;
     }
 
-    public Produto buscarProduto(String nome){
-        Produto produto = null;
+    public Produto buscarProduto(Produto nome){
         for (Produto retorno : produtos){
             if (retorno.getNome().equals( nome )){
                 return retorno;
@@ -30,7 +29,7 @@ public class ProdutoService {
         } throw new ProdutoNaoEncontradoException("Produto não encontrado!");
     }
 
-    public void verificarProdutoDuplicado(String nome){
+    public void verificarProdutoDuplicado(Produto nome){
         for (Produto retorno : produtos){
             if (retorno.getNome().equals( nome )){
                 throw new ProdutoJaCadastradoException("Produto já cadastrado!");
@@ -38,6 +37,16 @@ public class ProdutoService {
         }
     }
 
+
+
+    public boolean produtoEsgotado(Produto produto){
+        Produto produtoEmEstoque = buscarProduto(produto);
+
+        if (produtoEmEstoque.getQuantidade() <= 0){
+            return true;
+        }
+        return false;
+    }
 
 
 
