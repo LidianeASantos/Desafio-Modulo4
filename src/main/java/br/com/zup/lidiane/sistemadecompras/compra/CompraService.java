@@ -36,20 +36,17 @@ public class CompraService {
 
     public List<Compra> retornarListaDeCompraPorCliente(String cpf) {
         List<Produto> produtos = new ArrayList<>();
-        List<Cliente> clientes = new ArrayList<>();
-        for (Compra percorrer : compras) {
 
-            percorrer.getCliente().getCpf().equals( cpf );
-            percorrer.getProdutos().equals( produtos );
-
+         for (Compra percorrer : compras) {
+            if (percorrer.getCliente().getCpf().equals( cpf )) {
+                for (Produto elementoLista : percorrer.getProdutos()) {
+                    produtos.add( elementoLista );
+                }
+            }
         }
-        Cliente cliente = clienteService.pesquisarClientePorCPF( cpf );
-
-        produtoService.retornarProdutoNaLista();
-        clienteService.pesquisarClientePorCPF( cpf );
-
 
         return compras;
     }
+
 
 }

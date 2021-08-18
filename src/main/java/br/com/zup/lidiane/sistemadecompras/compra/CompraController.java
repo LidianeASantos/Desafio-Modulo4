@@ -1,6 +1,5 @@
 package br.com.zup.lidiane.sistemadecompras.compra;
 
-import br.com.zup.lidiane.sistemadecompras.produto.Produto;
 import br.com.zup.lidiane.sistemadecompras.produto.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

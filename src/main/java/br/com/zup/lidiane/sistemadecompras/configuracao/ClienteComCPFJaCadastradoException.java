@@ -1,4 +1,4 @@
-package br.com.zup.lidiane.sistemadecompras.exceptions;
+package br.com.zup.lidiane.sistemadecompras.configuracao;
 
 public class ClienteComCPFJaCadastradoException extends RuntimeException {
 

@@ -1,5 +1,6 @@
 package br.com.zup.lidiane.sistemadecompras.exceptions;
 
+import br.com.zup.lidiane.sistemadecompras.configuracao.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -24,9 +25,34 @@ public class ControllerAdvice {
         return new MensagemDeErro( 400, erros );
     }
 
+    @ExceptionHandler(ClienteComCPFJaCadastradoException.class)
     public MensagemDeErro manipularClienteComCPFJaCadastrado(ClienteComCPFJaCadastradoException exception){
         List<Erro> erros = Arrays.asList( new Erro( exception.getLocalizedMessage() ) );
 
+        return new MensagemDeErro( 400, erros );
+    }
+
+    @ExceptionHandler(ClienteComEmailJaCadastrdoException.class)
+    public MensagemDeErro manipularClienteComEmailJaCadastrado(ClienteComEmailJaCadastrdoException exception){
+        List<Erro> erros = Arrays.asList( new Erro( exception.getLocalizedMessage() ) );
+        return new MensagemDeErro( 400, erros );
+    }
+
+    @ExceptionHandler(ProdutoJaCadastradoException.class)
+    public MensagemDeErro manipularProdutoJaCadastrdo(ProdutoJaCadastradoException exception){
+        List<Erro> erros = Arrays.asList( new Erro( exception.getLocalizedMessage() ) );
+        return new MensagemDeErro( 400, erros );
+    }
+
+    @ExceptionHandler(ProdutoNaoEncontradoException.class)
+    public MensagemDeErro manipularProdutoNaoEncontrado(ProdutoNaoEncontradoException exception){
+        List<Erro> erros = Arrays.asList( new Erro( exception.getLocalizedMessage() ) );
+        return new MensagemDeErro( 400, erros );
+    }
+
+    @ExceptionHandler(ClienteNaoEncontradoException.class)
+    public MensagemDeErro manipularClienteNaoEncontrado(ClienteNaoEncontradoException exception){
+        List<Erro> erros = Arrays.asList( new Erro( exception.getLocalizedMessage() ) );
         return new MensagemDeErro( 400, erros );
     }
 }

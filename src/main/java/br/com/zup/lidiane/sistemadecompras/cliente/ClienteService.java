@@ -1,7 +1,8 @@
 package br.com.zup.lidiane.sistemadecompras.cliente;
 
 import br.com.zup.lidiane.sistemadecompras.configuracao.ClienteComEmailJaCadastrdoException;
-import br.com.zup.lidiane.sistemadecompras.exceptions.ClienteComCPFJaCadastradoException;
+import br.com.zup.lidiane.sistemadecompras.configuracao.ClienteComCPFJaCadastradoException;
+import br.com.zup.lidiane.sistemadecompras.configuracao.ClienteNaoEncontradoException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class ClienteService {
                 return retorno;
             }
 
-        }   throw new RuntimeException("Cliente não encontrado!");
+        }   throw new ClienteNaoEncontradoException("Cliente não encontrado!");
     }
 
     public void verificarEmailDuplicado(String email){
